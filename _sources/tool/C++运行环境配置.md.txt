@@ -5,7 +5,7 @@
 
 CS1501-CyPhy课程使用[VS Code](https://zh.wikipedia.org/wiki/Visual_Studio_Code)作为代码编辑器，本文将介绍如何进行VS Code运行环境配置以完成C++文件的编译及可执行文件生成。
 
-## 下载编译器
+### 下载编译器
 
 - Windows系统
 
@@ -25,7 +25,7 @@ CS1501-CyPhy课程使用[VS Code](https://zh.wikipedia.org/wiki/Visual_Studio_Co
 
      > 若此方法不成功也可直接下载xcode获取clang编译器
 
-## VS Code下载与配置
+### VS Code下载与配置
 
 1. 进入[VS Code官网](https://code.visualstudio.com/)下载软件并安装。
 

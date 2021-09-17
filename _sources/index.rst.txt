@@ -3,8 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-欢迎来到CS1501-CyPhy课程!
+欢迎来到CS1501-CyPhy课程文档!
 ========================================
+本文档旨在为同学们提供课程中所需使用工具的相关文档、课堂中提到扩展知识的详细介绍、以及尽可能多的编程帮助文档。
+
+.. toctree::
+   :maxdepth: 3
+   :titlesonly:
+
+   intro
 
 .. toctree::
    :maxdepth: 3
