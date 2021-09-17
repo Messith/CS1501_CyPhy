@@ -1,0 +1,37 @@
+.. CS1501-CyPhy documentation master file, created by
+   sphinx-quickstart on Wed Sep 15 13:27:00 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+欢迎来到CS1501-CyPhy课程!
+========================================
+
+.. toctree::
+   :maxdepth: 3
+   :caption: 工具相关
+   
+   tool/C++运行环境配置
+   tool/EduCoder作业平台使用
+   
+  
+.. toctree::
+   :maxdepth: 3
+   :caption: 扩展知识
+   
+   advanced/0绪论/index
+   advanced/1顺序/index
+   advanced/2分支/index
+   advanced/3循环/index
+   advanced/4数组/index
+   advanced/5函数/index
+   advanced/6指针/index
+   advanced/7结构体/index
+   advanced/8模块化/index
+   advanced/9类/index
+   advanced/10重载/index
+   advanced/11继承/index
+   
+.. toctree::
+   :maxdepth: 3
+   :caption: 杂项
+   
