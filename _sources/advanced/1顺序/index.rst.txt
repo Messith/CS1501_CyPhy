@@ -9,3 +9,6 @@ Chapter 1 顺序结构
 .. toctree::
    :maxdepth: 1
 
+   变量命名法
+   何时用下划线
+   十进制二进制转换

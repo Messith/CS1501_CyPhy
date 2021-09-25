@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>十进制与二进制转换 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Chapter 2 分支结构" href="../2%E5%88%86%E6%94%AF/index.html" />
+    <link rel="prev" title="何时使用下划线" href="%E4%BD%95%E6%97%B6%E7%94%A8%E4%B8%8B%E5%88%92%E7%BA%BF.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/C%2B%2B%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/EduCoder%E4%BD%9C%E4%B8%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../0%E7%BB%AA%E8%AE%BA/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 1 顺序结构</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E6%B3%95.html"><strong>变量命名法</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E4%BD%95%E6%97%B6%E7%94%A8%E4%B8%8B%E5%88%92%E7%BA%BF.html">何时使用下划线</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">十进制与二进制转换</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">二进制转十进制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">十进制转二进制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2%E5%88%86%E6%94%AF/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3%E5%BE%AA%E7%8E%AF/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4%E6%95%B0%E7%BB%84/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5%E5%87%BD%E6%95%B0/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6%E6%8C%87%E9%92%88/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7%E7%BB%93%E6%9E%84%E4%BD%93/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8%E6%A8%A1%E5%9D%97%E5%8C%96/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9%E7%B1%BB/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10%E9%87%8D%E8%BD%BD/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11%E7%BB%A7%E6%89%BF/index.html">Chapter 11 继承</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Chapter 1 顺序结构</a> &raquo;</li>
+      <li>十进制与二进制转换</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/advanced/1顺序/十进制二进制转换.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>十进制与二进制转换<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<p>在生活中我们最常用的数字系统就是十进制计数系统。所谓十进制计数系统，就是以10为基数的编号系统，对于十进制数其中每个数字为位采用十个可能值之一，称为“数字”，从0到9。例如，213<sub>10</sub>(213)就是一个十进制数。</p>
+<p>而在计算机系统中，使用的是二进制编号系统，换言之，其每个数字位只有两个可能值0或1。这十分契合计算机系统中使用逻辑电平来传递信号的方式，对于一个电信号来说，其一般有两个状态，即低位或高位对应着“0”或“1”（也可能出现高电平对应”0“的情况）。</p>
+<p>对于任何表示数字的编号系统都可以概括为一下关系：
+$$
+N=b_nq^n…+b_3q^3+b_2q^2+b_1q^1+b_0q^0+b_{-1}q^{-1}+b_{-2}q^{-2}…
+$$
+其中N是被表示的实数，$b_i$是数字，q是基值。</p>
+<p>例如对于十进制系统中的数字$N=6163_{10}$就可以表示为
+$$
+6163_{10}=6\times10^3+1\times10^2+6\times10^1+3\times10^0
+$$</p>
+<p>二进制系统的通用表示则是
+$$
+N=b_n\times2^n…+b_3\times2^3+b_2\times2^2+b_1\times2^1+b_0\times2^0+b_{-1}\times2^{-1}+b_{-2}\times2^{-2}…
+$$</p>
+<p>下面将介绍如何在我们常用的十进制与计算机系统常用的二进制进行进制转换。</p>
+<div class="section" id="id2">
+<h2>二进制转十进制<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>二进制转十进制的方法十分简单，只需根据编号系统的定义直接取二进制数字各个数位的加和即可。例如对于二进制数10110010<sub>2</sub>，其可以表示为
+$$
+10110010_2=1\times2^7+0\times2^6+1\times2^5+1\times2^4+0\times2^3+0\times2^2+1\times2^1+0\times2^0
+$$
+将右侧数字按照常规十进制系统加和即可得到二进制数的十进制表示，即10110010<sub>2</sub>=178<sub>10</sub>。</p>
+</div>
+<div class="section" id="id3">
+<h2>十进制转二进制<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>十进制整数转换为二进制整数十进制整数转换为二进制整数采用”除2取余，逆序排列”法。具体做法是：用2整除十进制整数，可以得到一个商和余数；再用2去除商，又会得到一个商和余数，如此进行，直到商为小于1时为止，然后把先得到的余数作为二进制数的低位有效位，后得到的余数作为二进制数的高位有效位，依次排列起来。</p>
+<p>例如对于十进制数178<sub>10</sub>的转换</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th>178</th>
+<th>余数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>除以2</td>
+<td>89</td>
+<td>0</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>44</td>
+<td>1</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>22</td>
+<td>0</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>11</td>
+<td>0</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>除以2</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table><p>将余数从最后往前看，得到10110010<sub>2</sub>，即178<sub>10</sub>=10110010<sub>2</sub>，这与前得到的结果相同。</p>
+<p><strong>原理</strong></p>
+<p>这样做之所以可行，就是基于前述编号系统的表示方法。现在我们重新选择一个十进制整数A<sub>10</sub>，假设其化得的二进制数位edcba<sub>2</sub>的形式，我们将其按二进制编号系统写出来就可以清晰明白此方法的原理。对于整数A<sub>10</sub>，根据假设我们知道
+$$
+A_{10}=edcba_2=e\times2^4+d\times2^3+c\times2^2+b\times2^1+a\times2^0
+$$
+将A<sub>10</sub>除以基数2，得到
+$$
+A_{10}/2=e\times(2^4)/2+d\times(2^3)/2+c\times(2^2)/2+b\times(2^1)/2+a\times(2^0)/2
+$$
+因为对于各个数位e、b、c、b、a均为0或1，因此只有最后一项a不能整除2，也就是说，a就是第一次整除余下的数。第一次整除后得到的商是
+$$
+e\times2^3+d\times2^2+c\times2^1+b\times2^0
+$$
+在此基础上再除以基数2，同理余下了b，以此类推，即可得到此十进制数A<sub>10</sub>的二进制表达。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E4%BD%95%E6%97%B6%E7%94%A8%E4%B8%8B%E5%88%92%E7%BA%BF.html" class="btn btn-neutral float-left" title="何时使用下划线" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../2%E5%88%86%E6%94%AF/index.html" class="btn btn-neutral float-right" title="Chapter 2 分支结构" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, CyPhy.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
