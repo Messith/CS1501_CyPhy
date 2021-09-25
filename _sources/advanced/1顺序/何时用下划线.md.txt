@@ -1,5 +1,7 @@
 # 何时使用下划线
 
+> <sub>参考文档《[What are the rules about using an underscore in a C++ identifier?](https://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier)》</sub>
+
 在介绍C++变量命名规则时，我们提到在进行变量命名时：**不能以数字开头**，必须以 **字母** （大小写不限）或 **下划线** 开头。而在使用下划线开头进行变量命名时，依然有一些规则需要遵循，如果使用了不规则的标识符，后果是不确定的。只是要注意，对这些规则的无知并不一定意味着代码不会编译或运行，但你写的代码很可能无法移植到不同的编译器和版本，因为不能保证不会有名称冲突。
 
 ## C++编程下划线命名规则
