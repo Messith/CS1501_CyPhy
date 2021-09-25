@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>变量命名法 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="何时使用下划线" href="underscore.html" />
+    <link rel="prev" title="Chapter 1 顺序结构" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 1 顺序结构</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">变量命名法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#c">C++变量命名规则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#camel-case">驼峰命名法（Camel-Case）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snake-case">蛇形命名法（snake case）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pascal-case">帕斯卡命名法（Pascal case）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hungarian-notation">匈牙利命名法（Hungarian Notation）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="underscore.html">何时使用下划线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baseConvert.html">十进制与二进制转换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Chapter 1 顺序结构</a> &raquo;</li>
+      <li>变量命名法</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/advanced/chap1_order/variableName.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>变量命名法<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<blockquote>
+<div><p><sub>参考文档《<a class="reference external" href="https://curc.readthedocs.io/en/latest/programming/coding-best-practices.html">Coding best practices</a>》</sub></p>
+</div></blockquote>
+<p>在代码开发过程中，定义变量是非常常见的，一个庞大的项目可能会用到成千上万的变量，如果只是随意对其进行命名而无一定的规则习惯，很显然这会让你写出的代码变得难以阅读。因此，在开始学习编程时，我们就要学会形成自己的一种命名规则，让自己以及读者能够快速的读懂变量的含义及其用途。</p>
+<p>在本文档中，我们将介绍C++语言中变量命名的规则以及四种常用的变量命名法，你可以学习使用其中一种符合自己口味的命名法，也可以在这些基础上形成自己的变量命名风格。唯一的要求是， <strong>确保在一个项目的代码文件中变量名风格是统一并且易读的</strong> 。</p>
+<p><code class="docutils literal notranslate"><span class="pre">请注意本文档介绍的命名风格不只可用于变量，也常用于在未来会学到的函数、文件等模块的命名。</span></code></p>
+<div class="section" id="c">
+<h2>C++变量命名规则<a class="headerlink" href="#c" title="永久链接至标题"></a></h2>
+<ol class="simple">
+<li><p>变量名中的其它字符必须是字母、数字或下划线，<strong>不得使用空格或其它特殊符号</strong>。</p></li>
+<li><p><strong>不能以数字开头</strong>。换言之，必须以 <strong>字母</strong> （大小写不限）或 <strong>下划线</strong> 开头。（关于下划线开头，请参考下篇文档“C++保留字规则”）</p></li>
+<li><p>变量名不可以是系统的关键字，如：int, double, for, return等保留字，它们在C++语言中有特殊用途。</p></li>
+<li><p>变量名长度通常在255个字符（character）以下。</p></li>
+<li><p>变量名中出现的大写和小写字母被看作是不同的字符，因此ABC，Abc，abc是三个独立的变量名。</p></li>
+<li><p>名字应有较好的 <strong>易读性</strong> ：使读者易于明白其存储的值是什么。</p></li>
+</ol>
+</div>
+<div class="section" id="camel-case">
+<h2>驼峰命名法（Camel-Case）<a class="headerlink" href="#camel-case" title="永久链接至标题"></a></h2>
+<p>骆驼式命名法（Camel-Case）又称驼峰式命名法，也称小驼峰式命名法。</p>
+<p>正如其名称表示，在使用此种风格进行变量命名时，<strong>第一个单词以小写字母开始；从第二个单词开始以后的每个单词的首字母都采用大写字母</strong>。例如：variableOne、variableTwo。这样命名出的变量看起来就像骆驼峰一样，每个大写字母都是一个“驼峰”。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">variableOne</span>
+<span class="n">variableTwo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="snake-case">
+<h2>蛇形命名法（snake case）<a class="headerlink" href="#snake-case" title="永久链接至标题"></a></h2>
+<p>下划线命名法变量名和函式名称是由二个或二个以上单词连结在一起，每个单词用下划线隔开并且单词都是小写，例如：<code class="docutils literal notranslate"><span class="pre">print_employee</span></code>。下划线命名法是随着C语言的出现流行起来的，在UNIX/LIUNX这样的环境，以及GNU代码中使用非常普遍。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">variable_one</span>
+<span class="n">variable_two</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pascal-case">
+<h2>帕斯卡命名法（Pascal case）<a class="headerlink" href="#pascal-case" title="永久链接至标题"></a></h2>
+<p>帕斯卡命名法在进行命名时，<strong>每个单词首字母均大写</strong>。例如：VariableOne、VariableTwo。其与（小）驼峰命名法十分相似，区别只在于第一个单词首字母是否大小写，因此也有人称其为<strong>大驼峰命名法</strong>（Upper Camel Case）。</p>
+</div>
+<div class="section" id="hungarian-notation">
+<h2>匈牙利命名法（Hungarian Notation）<a class="headerlink" href="#hungarian-notation" title="永久链接至标题"></a></h2>
+<p>这种命名方法是由程序员Charles Simonyi提出，据说这种命名法是对于Simonyi祖籍的一种讽刺。</p>
+<p>匈牙利命名法的基本原则是，<strong>变量名=属性+类型+对象描述</strong>，通过在变量名前面加上相应的小写字母的符号标识作为前缀，标识出变量的作用域，类型等。例如：iRandomSeed，以i开头表明此变量是Int（整型）变量，再对此变量进行描述为Random Seed，说明其是一个随机种子，可以快速明白此变量的用途是作为一个整型的随机种子数。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">arrDistributeGroup</span>	<span class="c1">//Array called &quot;Distribute Group&quot;</span>
+<span class="n">sUserName</span>			<span class="c1">//string called &quot;User Name&quot;</span>
+<span class="n">iRandomSeed</span>			<span class="c1">//Integer called &quot;Random Seed&quot;</span>
+</pre></div>
+</div>
+<p>以下为匈牙利命名法中常用的前缀。</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>前缀</th>
+<th>类型</th>
+<th>举例</th>
+<th>前缀</th>
+<th>类型</th>
+<th>举例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>整型 int</td>
+<td>iCount</td>
+<td>s</td>
+<td>字符串 string</td>
+<td>sUserName</td>
+</tr>
+<tr>
+<td>n</td>
+<td>短整型 short int</td>
+<td>nSize</td>
+<td>a</td>
+<td>数组 array</td>
+<td>aDistributeGroup</td>
+</tr>
+<tr>
+<td>l</td>
+<td>长整型 long int</td>
+<td>lNum</td>
+<td>p</td>
+<td>指针 pointer</td>
+<td>pFoo</td>
+</tr>
+<tr>
+<td>c</td>
+<td>有符号字符 char</td>
+<td>cApples</td>
+<td>lp</td>
+<td>长指针 long pointer</td>
+<td>lpBar</td>
+</tr>
+<tr>
+<td>by</td>
+<td>字节 byte</td>
+<td>byLoad</td>
+<td>m_</td>
+<td>类的成员 member</td>
+<td>m_Foo</td>
+</tr>
+<tr>
+<td>w</td>
+<td>字 word</td>
+<td>wTrans</td>
+<td>fn</td>
+<td>函数 function</td>
+<td>fnFunction</td>
+</tr>
+<tr>
+<td>b</td>
+<td>布尔值 boolean</td>
+<td>bBusy</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><p>更多可参考<a class="reference external" href="https://zh.wikipedia.org/wiki/%E5%8C%88%E7%89%99%E5%88%A9%E5%91%BD%E5%90%8D%E6%B3%95">匈牙利命名法-维基百科</a>。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Chapter 1 顺序结构" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="underscore.html" class="btn btn-neutral float-right" title="何时使用下划线" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, CyPhy.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

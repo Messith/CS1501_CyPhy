@@ -17,26 +17,26 @@
    :maxdepth: 3
    :caption: 工具相关
    
-   tool/C++运行环境配置
-   tool/EduCoder作业平台使用
+   tool/CppEnvConfig
+   tool/EduCoderUse
    
   
 .. toctree::
    :maxdepth: 3
    :caption: 扩展知识
    
-   advanced/0绪论/index
-   advanced/1顺序/index
-   advanced/2分支/index
-   advanced/3循环/index
-   advanced/4数组/index
-   advanced/5函数/index
-   advanced/6指针/index
-   advanced/7结构体/index
-   advanced/8模块化/index
-   advanced/9类/index
-   advanced/10重载/index
-   advanced/11继承/index
+   advanced/chap0_intro/index
+   advanced/chap1_order/index
+   advanced/chap2_branch/index
+   advanced/chap3_loop/index
+   advanced/chap4_array/index
+   advanced/chap5_function/index
+   advanced/chap6_pointer/index
+   advanced/chap7_structure/index
+   advanced/chap8_modular/index
+   advanced/chap9_class/index
+   advanced/chap10_overload/index
+   advanced/chap11_inheritance/index
    
 .. toctree::
    :maxdepth: 3

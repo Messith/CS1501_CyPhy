@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>何时使用下划线 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="十进制与二进制转换" href="baseConvert.html" />
+    <link rel="prev" title="变量命名法" href="variableName.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 1 顺序结构</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="variableName.html">变量命名法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">何时使用下划线</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#c">C++编程下划线命名规则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">C++保留字规则</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">7.1.3 保留标识符</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">其他可能的保留标识符</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="baseConvert.html">十进制与二进制转换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Chapter 1 顺序结构</a> &raquo;</li>
+      <li>何时使用下划线</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/advanced/chap1_order/underscore.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>何时使用下划线<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<blockquote>
+<div><p><sub>参考文档《<a class="reference external" href="https://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier">What are the rules about using an underscore in a C++ identifier?</a>》</sub></p>
+</div></blockquote>
+<p>在介绍C++变量命名规则时，我们提到在进行变量命名时：<strong>不能以数字开头</strong>，必须以 <strong>字母</strong> （大小写不限）或 <strong>下划线</strong> 开头。而在使用下划线开头进行变量命名时，依然有一些规则需要遵循，如果使用了不规则的标识符，后果是不确定的。只是要注意，对这些规则的无知并不一定意味着代码不会编译或运行，但你写的代码很可能无法移植到不同的编译器和版本，因为不能保证不会有名称冲突。</p>
+<div class="section" id="c">
+<h2>C++编程下划线命名规则<a class="headerlink" href="#c" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>在任何范围内保留：</p>
+<ul>
+<li><p>下划线开头的标识符后跟大写字母，如_MyFoo</p></li>
+<li><p>包含双下划线的标识符，如__init、init__。</p></li>
+</ul>
+</li>
+<li><p>保留在全局命名空间（global namespace）中</p>
+<ul>
+<li><p>下划线开头的标识符</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std</span></code>命名空间中的所有内容都是保留的，如cout、cin。</p></li>
+</ul>
+<hr class="docutils" />
+<p>对下划线使用规则的总结就是<strong>可以使用单个下划线作为成员变量前缀，只要它后跟一个小写字母即可</strong>。但即使如此这依然有可能与当前或将来的保留标识符发生冲突。</p>
+<p>因此，对于下划线，我们建议<strong>不要在任何地方使用双下划线</strong>，也<strong>最好</strong>不要命名以下划线开头的变量，以此来避免与编译器/操作系统/标准库发生冲突。</p>
+</div>
+<div class="section" id="id2">
+<h2>C++保留字规则<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>以下文本摘自C++保留字规则标准</p>
+<div class="section" id="id3">
+<h3>7.1.3 保留标识符<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<p>（保留字包括）每个头声明或定义在其相关子句中列出的所有标识符，并可选地声明或定义在其相关的未来库方向子句中列出的标识符，这些标识符始终保留用于任何用途或用作文件范围标识符。</p>
+<ul class="simple">
+<li><p>所有以下划线和大写字母或另一个下划线开头的标识符始终保留供任何使用。</p></li>
+<li><p>所有以下划线开头的标识符始终保留用作普通名称空间和标记名称空间中具有文件范围的标识符。</p></li>
+<li><p>如果包含了任何关联的头文件，则其中任何子句（包括未来的库方向）中的每个宏名称都保留供指定的使用；除非另有明确说明（见 7.1.4）。</p></li>
+<li><p>以下任何子句（包括未来的库方向）中具有外部链接的所有标识符始终保留用作具有外部链接的标识符。（与外部连接保留的标识符的列表包括<code class="docutils literal notranslate"><span class="pre">errno</span></code>，<code class="docutils literal notranslate"><span class="pre">math_errhandling</span></code>，<code class="docutils literal notranslate"><span class="pre">setjmp</span></code>，和<code class="docutils literal notranslate"><span class="pre">va_end</span></code>。）</p></li>
+<li><p>如果任何头文件被关联了，在其中的任何子句（包括未来的库方向）中列出的具有文件范围的每个标识符都保留用作宏名称以及用作同一名称空间中具有文件范围的标识符。</p></li>
+</ul>
+<p>不保留其他标识符。如果程序在保留标识符的上下文中声明或定义标识符（7.1.4 允许的情况除外），或将保留标识符定义为宏名称，则行为未定义。</p>
+<p>如果程序删除（使用<code class="docutils literal notranslate"><span class="pre">#undef</span></code>）上面列出的第一组中标识符的任何宏定义，则行为未定义。</p>
+</div>
+<p>对于保留字的总结如下：如果程序中包含了某个头文件，则不应该将该头文件中定义的宏名用作其他目的。C++语言保留了以两个下划线或下划线和大写字母打头的名称，还将以单个下划线打头的名称保留用作全局变量。C++语言保留了在库头文件中被声明为外部链接性的名称。</p>
+</div>
+<div class="section" id="id4">
+<h2>其他可能的保留标识符<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>除了在C++语言层次存在需要规避的保留字，其他标准限制也可能适用于变量命名规则。比如POSIX标准就保留了很多可能出现在正常代码中的标识符。</p>
+<p>关于POSIX(Protabl Operation System 可移植操作系统规范)标准，简单来说是为了解决不同操作系统内核间软件移植的问题。比如常用的Linux和Windows系统都要实现基本的POSIX标准，将两个系统中不同的API封装成相同的函数名，这样即使使用不同的系统内核调用，也只需要调用同样的函数名就可以实现功能。（更详细讲解可参考<a class="reference external" href="https://www.jianshu.com/p/7a17b34e05ee">POSIX解决什么问题</a>）</p>
+<p>因此，对于POSIX标准中规定的标识符，我们也需将其视为保留字。当然，虽然现在将这些名称用于自己的目的可能不会造成问题，但它们确实增加了与该标准的未来版本发生冲突的可能性。</p>
+<p>以下是常见的POSXI标准</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>E</code>大写开头的名称后跟数字或大写字母</td>
+<td align="left">用于附加错误代码名称</td>
+</tr>
+<tr>
+<td align="left">小写字母开头<code>is</code>或<code>to</code>后跟小写字母</td>
+<td align="left">用于额外的字符测试和转换功能。</td>
+</tr>
+<tr>
+<td align="left"><code>LC_</code>开头后跟一个大写字母</td>
+<td align="left">用于指定语言环境属性的附加宏。</td>
+</tr>
+<tr>
+<td align="left">以<code>f</code>或<code>l</code>为 后缀的所有现有数学函数的名称</td>
+<td align="left">分别对 float 和 long double 参数进行操作的相应函数</td>
+</tr>
+<tr>
+<td align="left"><code>SIG</code>或<code>SIG_</code>后跟以大写字母开头的名称</td>
+<td align="left">用于额外的信号操作</td>
+</tr>
+<tr>
+<td align="left">以<code>str</code>,<code>mem</code>或<code>wcs</code>开头后跟小写字母的名称</td>
+<td align="left">用于额外的字符串和数组函数</td>
+</tr>
+<tr>
+<td align="left">以任何小写字母开头<code>PRI</code>或<code>SCN</code>后跟或<code>X</code></td>
+<td align="left">用于其他格式说明符宏</td>
+</tr>
+<tr>
+<td align="left">以<code>_t</code> 结尾的名称</td>
+<td align="left">用于其他类型名称</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="variableName.html" class="btn btn-neutral float-left" title="变量命名法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="baseConvert.html" class="btn btn-neutral float-right" title="十进制与二进制转换" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, CyPhy.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
