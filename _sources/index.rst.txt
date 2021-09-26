@@ -8,13 +8,13 @@
 本文档旨在为同学们提供课程中所需使用工具的相关文档、课堂中提到扩展知识的详细介绍、以及尽可能多的编程帮助文档。
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :titlesonly:
 
    intro
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: 工具相关
    
    tool/CppEnvConfig
@@ -41,4 +41,10 @@
 .. toctree::
    :maxdepth: 3
    :caption: 杂项
-   
+
+关于此教程
+---------
+
+这些文档主要由 `CyPhy实验室 <https://cyphylab.com/>`_ 为2021年秋季课程 `CS1501-程序设计思想与方法` 编写，本课程由 `陈东尧 <https://chendy.tech/>`_ 老师授课，助教为 `罗庆 <luoqing@sjtu.edu.cn>`_ 、`王纪科 <jikewang@sjtu.edu.cn>`_ 、`叶瑜超 <610022093@qq.com>`_ 。
+
+本文档采用 `知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议进行许可 <https://creativecommons.org/licenses/by-nc-sa/3.0/cn/>`_
