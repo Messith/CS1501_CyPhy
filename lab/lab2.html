@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lab2 2021.9.30 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="lab3 2021.10.9" href="lab3.html" />
+    <link rel="prev" title="lab1 2021.9.23" href="lab1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">lab2 2021.9.30</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#p13">一、鸡兔同笼 p13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#p15">二、判断共线 p15</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab3.html">lab3 2021.10.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab4.html">lab4 2021.10.14</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>lab2 2021.9.30</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/lab/lab2.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="lab2-2021-9-30">
+<h1>lab2 2021.9.30<a class="headerlink" href="#lab2-2021-9-30" title="永久链接至标题"></a></h1>
+<blockquote>
+<div><p><sub>使用参考书为学校配套使用上机指导书</sub></p>
+</div></blockquote>
+<div class="section" id="p13">
+<h2>一、鸡兔同笼 p13<a class="headerlink" href="#p13" title="永久链接至标题"></a></h2>
+<p>本次实验题目都比较简单，鸡兔同笼问题只需用公式计算出鸡兔数量输出即可。要注意的是我们需要用if语句来检查输入是否符合要求，若不符合则输出错误。</p>
+<p>在验收时，发现许多同学都漏写了检测条件中的一部分。在以后的编程中，要考虑好所有的条件情况再使用if进行分支判断。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//定义所需变量</span>
+    <span class="kt">int</span> <span class="n">head</span><span class="p">,</span> <span class="n">leg</span><span class="p">,</span> <span class="n">rabbit</span><span class="p">,</span> <span class="n">chi</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;please input the number of head and leg:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">head</span> <span class="o">&gt;&gt;</span> <span class="n">leg</span><span class="p">;</span>
+    
+	<span class="c1">//运用公式计算</span>
+    <span class="n">rabbit</span> <span class="o">=</span> <span class="p">(</span><span class="n">leg</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">head</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">chi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">head</span> <span class="o">-</span> <span class="n">leg</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    
+	<span class="c1">//判断输入是否符合要求</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">leg</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>	
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;rabbit:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">rabbit</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;,chicken:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">chi</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">else</span> 
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;input error！&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="p15">
+<h2>二、判断共线 p15<a class="headerlink" href="#p15" title="永久链接至标题"></a></h2>
+<p>本题解决逻辑也较简单，利用三个点计算出两个向量，看两个向量的方向是否一样即可。</p>
+<p>验收时注意到两个问题：</p>
+<ol>
+<li><p>判断条件很多同学使用的是<code class="docutils literal notranslate"><span class="pre">(y3-y1)/(x3-x1)</span> <span class="pre">==</span> <span class="pre">(y2-y1)/(x2-x1)</span></code>，这样可能会导致一个问题就是如果有两个点的横坐标相等，那会出现除0错误。除0错误会在程序中引起错误(有些编译器可能会优化掉，但我们不能依赖于编译器的好坏)，在编程中要额外注意除法运算，在使用除法运算前，需要对输入数据进行分析，保证不会出现除数为0的情况（可以用if判断，也可以对输入数据进行限制）。</p>
+<p>在本题中还有一种避免出现除0错误的方法，就是利用数学知识转化等式，将上等式变换为<code class="docutils literal notranslate"><span class="pre">(y3-y1)*(x2-x1)</span> <span class="pre">==</span> <span class="pre">(y2-y1)*(x3-x1)</span></code>，将乘法变为除法。</p>
+</li>
+<li><p>第二个问题是如何判断两个double型变量相等。在lab1中，我们发现double型变量在计算机中存储存在精度损失，比如<code class="docutils literal notranslate"><span class="pre">1.8</span></code>就可能存为<code class="docutils literal notranslate"><span class="pre">1.79...98</span></code>。同样<code class="docutils literal notranslate"><span class="pre">1.8</span></code>也可能存为<code class="docutils literal notranslate"><span class="pre">1.80...01</span></code>。这时，计算机怎么判断两个这两个1.8是相等的呢？</p>
+<p>在编译器中，可能会对程序进行优化，让double型变量可以直接用<code class="docutils literal notranslate"><span class="pre">==</span></code>来判断相等。但与除0错误一样，我们不能寄希望于编译器，而需要在程序逻辑上进行优化处理。一般的方法是，定义一个足够小的量，如果两个double型变量之差小于这个值，那我们认为这两个变量是相等的。在示例代码判断共线条件中就用了这种方法即<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">if</span> <span class="pre">(abs((y3</span> <span class="pre">-</span> <span class="pre">y1)</span> <span class="pre">*</span> <span class="pre">(x2</span> <span class="pre">-</span> <span class="pre">x1)</span> <span class="pre">-</span> <span class="pre">(y2</span> <span class="pre">-</span> <span class="pre">y1)</span> <span class="pre">*</span> <span class="pre">(x3</span> <span class="pre">-</span> <span class="pre">x1))</span> <span class="pre">&lt;=</span> <span class="pre">1e-6)</span></code>。</p>
+<p>我们希望大家能在以后对double变量进行相等判断时都使用这种方法，避免可能出现的逻辑错误（一旦出现这样的错误，可能会花费很长时间来发现是这里出问题）。</p>
+</li>
+</ol>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">;</span>		<span class="c1">//定义三个点</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x1,y1:&quot;</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x1</span> <span class="o">&gt;&gt;</span> <span class="n">y1</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x2,y2:&quot;</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x2</span> <span class="o">&gt;&gt;</span> <span class="n">y2</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;x3,y3:&quot;</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x3</span> <span class="o">&gt;&gt;</span> <span class="n">y3</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">((</span><span class="n">y3</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x3</span> <span class="o">-</span> <span class="n">x1</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mf">1e-6</span><span class="p">)</span>		<span class="c1">//判断共线</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Yes&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;No&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lab1.html" class="btn btn-neutral float-left" title="lab1 2021.9.23" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="lab3.html" class="btn btn-neutral float-right" title="lab3 2021.10.9" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

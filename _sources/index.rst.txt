@@ -40,7 +40,12 @@
    
 .. toctree::
    :maxdepth: 3
-   :caption: 杂项
+   :caption: 上机实验
+
+   lab/lab1
+   lab/lab2
+   lab/lab3
+   lab/lab4
 
 关于此教程
 ---------

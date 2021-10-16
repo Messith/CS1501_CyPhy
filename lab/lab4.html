@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lab4 2021.10.14 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="lab3 2021.10.9" href="lab3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab2.html">lab2 2021.9.30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab3.html">lab3 2021.10.9</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">lab4 2021.10.14</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#abc">一、ABC全排列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">二、罗列素数</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>lab4 2021.10.14</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/lab/lab4.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="lab4-2021-10-14">
+<h1>lab4 2021.10.14<a class="headerlink" href="#lab4-2021-10-14" title="永久链接至标题"></a></h1>
+<blockquote>
+<div><p><sub>使用参考书为学校配套使用上机指导书</sub></p>
+</div></blockquote>
+<div class="section" id="abc">
+<h2>一、ABC全排列<a class="headerlink" href="#abc" title="永久链接至标题"></a></h2>
+<p>本解法利用了枚举法的思想，用三重循环罗列出所有ABC组合，再利用if语句进行条件判断，筛选出需要的排列。</p>
+<p>上机时遇到的问题主要有两个：</p>
+<ol>
+<li><p>用<code class="docutils literal notranslate"><span class="pre">cout</span></code>输出字符’A’、’B’、’C’。这涉及int型和char型变量的转换，在计算机中存储char变量时也是使用0、1比特位来存储的，那如何让计算机由存储的二进制数字输出一个所需的字符呢。这就用到了ASCII码表的转换。在程序遇到char型变量时，计算机会利用ASCII码表将存储在变量存储单元中的二进制数字转化为ASCII表中的字符。因此，在使用<code class="docutils literal notranslate"><span class="pre">cout</span></code>时，我们可以直接用类似<code class="docutils literal notranslate"><span class="pre">cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">char(65)</span></code>的语句输出需要的字符。上面这句语句输出的字符就是ASCII表中<code class="docutils literal notranslate"><span class="pre">65</span></code>对应的字符<code class="docutils literal notranslate"><span class="pre">A</span></code>。</p></li>
+<li><p>在使用if、for语句时，一定要注意其后所跟的代码块范围。在验收时，发现很多同学在写if和for语句时，不加<code class="docutils literal notranslate"><span class="pre">{}</span></code>，对于分支或循环体重只有一行语句的代码这是可行的，但对于其中有多行代码的情况，这一般会导致逻辑BUG出现。因此，我们建议在使用if、for之类的语句时，尽量习惯性在后面加上<code class="docutils literal notranslate"><span class="pre">{}</span></code>表明其代码块范围，即使其中只有一行代码。</p>
+<p><em><strong>看没有大括号的语言的书的时候，是真的需要尺子的，换页就是灾难。   ——不知名网友</strong></em></p>
+</li>
+</ol>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//示例代码</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span> 
+   <span class="kt">char</span>  <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">;</span>
+   <span class="k">for</span> <span class="p">(</span><span class="n">c1</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span> <span class="n">c1</span> <span class="o">&lt;=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">c1</span><span class="p">){</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">c2</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span> <span class="n">c2</span> <span class="o">&lt;=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">c2</span><span class="p">){</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">)</span>  <span class="p">{</span><span class="k">continue</span><span class="p">;}</span>
+             <span class="k">else</span><span class="p">{</span>
+                  <span class="k">for</span> <span class="p">(</span><span class="n">c3</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span> <span class="n">c3</span> <span class="o">&lt;=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">c3</span><span class="p">){</span>
+                      <span class="k">if</span>  <span class="p">((</span><span class="n">c3</span> <span class="o">==</span> <span class="n">c1</span> <span class="o">||</span> <span class="n">c3</span> <span class="o">==</span> <span class="n">c2</span><span class="p">))</span>  <span class="p">{</span><span class="k">continue</span><span class="p">;}</span>
+                      <span class="k">else</span>  <span class="p">{</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c1</span> <span class="o">&lt;&lt;</span> <span class="n">c2</span> <span class="o">&lt;&lt;</span> <span class="n">c3</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;}</span>
+                  <span class="p">}</span>
+             <span class="p">}</span>
+        <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>二、罗列素数<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>本解法逻辑也较简单，也是使用枚举法遍历范围内的全部数字，根据条件检查其是否为素数。</p>
+<p>验收时基本没有发现什么问题，有一个可能要注意的就是如何判断代码是走完了整个循环再跳出for循环还是在其中触发了break跳出来。在示例代码中，我们使用flag来解决这个问题，是大部分同学使用的方法，也是我们比较推荐的方法。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span> 
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>                  <span class="c1">//枚举1到100的数</span>
+        <span class="kt">bool</span> <span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>                            <span class="c1">//是否素数的标志</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>                   <span class="c1">//枚举2到i-1的数</span>
+            <span class="c1">//如果j整除i，则i不是素数，将标志修改为false，退出内层的循环</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="n">j</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span> 
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>                  <span class="c1">//如果标志为false，不输出</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lab3.html" class="btn btn-neutral float-left" title="lab3 2021.10.9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

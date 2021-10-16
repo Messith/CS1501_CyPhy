@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>枚举法与贪婪法 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Chapter 4 数组" href="../chap4_array/index.html" />
+    <link rel="prev" title="Chapter 3 循环结构" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 3 循环结构</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">枚举法与贪婪法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">枚举法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">贪婪法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab2.html">lab2 2021.9.30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab3.html">lab3 2021.10.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab4.html">lab4 2021.10.14</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Chapter 3 循环结构</a> &raquo;</li>
+      <li>枚举法与贪婪法</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/advanced/chap3_loop/EnumGreedy.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>枚举法与贪婪法<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<div class="section" id="id2">
+<h2>枚举法<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>在进行归纳推理时，如果逐个考察了某类事件的所有可能情况，因而得出一般结论，那么这结论是可靠的，这种归纳方法叫做枚举法。枚举法是利用计算机运算速度快、精确度高的特点，对要解决问题的所有可能情况，一个不漏地进行检验，从中找出符合要求的答案，因此枚举法是通过牺牲时间来换取答案的全面性。</p>
+<p>使用枚举法解决问题时的主要思路：</p>
+<ol class="simple">
+<li><p>确定枚举对象、范围和判定条件。</p></li>
+<li><p>逐一枚举可能的解并验证每个解是否是问题的解。</p></li>
+</ol>
+<p>最最重要的，就是第一步中确定范围的想法，在使用枚举法前，我们必须确保问题的可行解范围是能够被枚举的。也正因为需要遍历问题的可行解范围，我们常用循环结构来进行枚举。</p>
+<p>以上机课中 <strong>列举100以内素数</strong> 的题目为例，一般解法的思路就是利用枚举的方法，将100以内的数全部遍历检查其是不是素数，若是素数就输出。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span> 
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>         <span class="c1">//枚举1到100的数</span>
+    <span class="kt">bool</span> <span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>              <span class="c1">//是否素数的标志</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>          <span class="c1">//枚举2到i-1的数</span>
+      <span class="c1">//如果j整除i，则i不是素数，将标志修改为false，退出内层的循环</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="n">j</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span> 
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>         <span class="c1">//如果标志为false，不输出</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>但枚举法的劣势也会在这个程序中显示出来，如果我们要求列出 10<sup>10</sup>内的所有素数，在用以上程序逻辑进行计算时，我们可能会进行10<sup>20</sup>量级次运算，这显然是不可接受的。</p>
+<p>因此在使用枚举法时，我们必须注意到枚举法的性能是相对不好的，运算量比较大，效率不高。在编码中对性能的要求可能会迫使你更多的思考，选择其他算法或者使用一些小技巧来使得枚举效率更高（比如在枚举素数时，有只需要线性时间的<a class="reference external" href="https://zhuanlan.zhihu.com/p/100051075">欧拉筛算法</a>）</p>
+</div>
+<div class="section" id="id3">
+<h2>贪婪法<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>贪婪法又称贪心算法，是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择（局部最优解），从而希望导致结果是最好或最优的算法。</p>
+<p>从上面这句对算法的整体描述，我们可以知道贪婪法保证的是每一步的局部最优解，但无法保证全局最优。如果需要用贪婪法得到全局最优解，那此问题必须是最优子结构的问题。最优子结构的意思是局部最优解能决定全局最优解。简单地说，问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解。</p>
+<p>之后我们会用例子让大家对贪婪法的局部最优和全局最优有一个直观的了解。下面是使用贪婪法的基本步骤：</p>
+<ol class="simple">
+<li><p>从某个初始解出发</p></li>
+<li><p>采用迭代的过程，当可以向目标前进一步时，就根据局部最优策略，得到一个部分解，缩小问题规模。</p></li>
+<li><p>将所有解综合起来</p></li>
+</ol>
+<p>使用贪婪法的一个例子就是上课时提到的：<strong>对于一种货币，有面值为1分, 2分, 5分和1角的硬币，最少需要多少个硬币来找出K分钱的零钱。</strong></p>
+<p>我们使用贪婪法的思想就是不断地使用面值最大的硬币。如要找零的值小于最大的硬币值，则尝试第二大的硬币，依此类推。以下为示例代码。可以发现在这个问题中，使用贪婪法是有效的，能够找到全局最优解。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span> 
+	<span class="kt">int</span> <span class="n">money</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">onefen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">twofen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fivefen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">onejiao</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;输入要找零的钱（以分为单位）：&quot;</span><span class="p">;</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">money</span><span class="p">;</span> 
+
+ 	<span class="c1">//不断尝试每一种硬币 </span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">money</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span><span class="n">onejiao</span><span class="o">++</span><span class="p">;</span> <span class="n">money</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;}</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">money</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span><span class="n">fivefen</span><span class="o">++</span><span class="p">;</span> <span class="n">money</span> <span class="o">-=</span> <span class="mi">5</span><span class="p">;}</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">money</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="n">twofen</span><span class="o">++</span><span class="p">;</span> <span class="n">money</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;}</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">money</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="n">onefen</span><span class="o">++</span><span class="p">;</span> <span class="n">money</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;}</span>
+
+ 	<span class="c1">//输出结果</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">onejiao</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">onefen</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">twofen</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">fivefen</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+ 		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;无解&quot;</span><span class="p">;</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;1角硬币数：&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">onejiao</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;5分硬币数：&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">fivefen</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;2分硬币数：&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">twofen</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;1分硬币数：&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">onefen</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>但如果我们把问题条件稍作调整为 <strong>对于一种货币，有面值为1分, 3分, 9分和1角的硬币，最少需要多少个硬币来找出K分钱的零钱。</strong></p>
+<p>当K为12时，可以发现贪婪法已经失效，我们找到的不是最优解。那么如何在这种情况下找到全局最优解？可以使用<a class="reference external" href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划</a>算法。贪心算法与动态规划的不同在于它对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。</p>
+<p>在解决问题时，一旦一个问题可以通过贪心法来解决，那么贪心法一般是解决这个问题的最好办法。但大多数问题都无法简单的用贪心法解决，需要构建更精准的算法逻辑。</p>
+<p>当然，在一些工程问题中往往我们很难找到全局最优解（或者只需要一个局部最优解），这时由于贪心法的高效性以及其所求得的答案比较接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Chapter 3 循环结构" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../chap4_array/index.html" class="btn btn-neutral float-right" title="Chapter 4 数组" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

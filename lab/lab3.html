@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lab3 2021.10.9 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="lab4 2021.10.14" href="lab4.html" />
+    <link rel="prev" title="lab2 2021.9.30" href="lab2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab2.html">lab2 2021.9.30</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">lab3 2021.10.9</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-aa-aaa-aaaa-aa-na-p13">一、求a+aa+aaa+…+aaaa..aa(n个a)之和 p13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">二、求阶乘和</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">附加一、计算零钱方法数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab4.html">lab4 2021.10.14</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>lab3 2021.10.9</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/lab/lab3.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="lab3-2021-10-9">
+<h1>lab3 2021.10.9<a class="headerlink" href="#lab3-2021-10-9" title="永久链接至标题"></a></h1>
+<blockquote>
+<div><p><sub>使用参考书为学校配套使用上机指导书</sub></p>
+</div></blockquote>
+<div class="section" id="a-aa-aaa-aaaa-aa-na-p13">
+<h2>一、求a+aa+aaa+…+aaaa..aa(n个a)之和 p13<a class="headerlink" href="#a-aa-aaa-aaaa-aa-na-p13" title="永久链接至标题"></a></h2>
+<p>本题要注意的就是题目没有说明a的输入范围，因此要考虑多位情况。如何得到a的位数可参考示例代码，可以用本次上课学的循环语句计算，也可用已有数学知识直接调用函数计算。</p>
+<p>另一点就是计算加和的方法。这个可以用示例代码中每次for循环一遍重新计算加数再加到<code class="docutils literal notranslate"><span class="pre">sum</span></code>中的方法，也可定义一个加数变量<code class="docutils literal notranslate"><span class="pre">tmp</span></code>保存每次的加数值从而减少计算。</p>
+<p>本题逻辑较简单想明白就可以了。其他要注意的可能是计算幂次时不能直接用<code class="docutils literal notranslate"><span class="pre">^</span></code>符号，<code class="docutils literal notranslate"><span class="pre">^</span></code>符号在c++中是一个逻辑运算符，需要调用<code class="docutils literal notranslate"><span class="pre">pow()</span></code>函数。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">sum</span><span class="p">,</span><span class="n">count</span><span class="p">,</span><span class="n">temp</span><span class="p">;</span>
+    
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Input a,n: &quot;</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+ 
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>				<span class="c1">//或者用 n = log10(a) + 1; 可以直接得到位数。(可能需cmath库)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">temp</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>			
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">temp</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>  <span class="c1">//得到a的位数</span>
+ 
+    <span class="c1">// 按照前后项的顺序对算式进行求和</span>
+    <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="o">*</span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">count</span><span class="o">*</span><span class="n">j</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Sum=&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>二、求阶乘和<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>看示例代码应该能够明白。没有什么需要注意的点。（可能要注意初始化？）</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//本代码来自某同学</span>
+<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">product</span><span class="p">,</span><span class="n">sum</span><span class="p">;</span>		<span class="c1">//定义存储变量</span>
+
+    <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>					<span class="c1">//初始化，也可在定义时做</span>
+    <span class="n">product</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span>	<span class="c1">//循环十次</span>
+        <span class="n">product</span><span class="o">*=</span><span class="n">i</span><span class="p">;</span>
+        <span class="n">sum</span><span class="o">+=</span><span class="n">product</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sum</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>附加一、计算零钱方法数<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>本题虽然是附加题，但相对于前两道题其实并不困难，写代码前想明白怎么写逻辑就行。这里本质还是枚举法，把所有情况枚举一遍，检查所有零钱加起来的价值是否等于需要的价值即可。</p>
+<p>看明白示例代码就行。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//本代码同样来自某同学...代码写的挺清楚好看的...</span>
+<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">change</span><span class="p">,</span><span class="n">Methods</span><span class="p">;</span>			<span class="c1">//定义零钱数、方法数</span>
+
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Input the change:&quot;</span><span class="p">;</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">change</span><span class="p">;</span>
+
+    <span class="n">Methods</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>					<span class="c1">//初始化</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">change</span><span class="o">/</span><span class="mi">5</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span>		<span class="c1">//要求每种零钱要有一个，因此从1开始循环。</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">change</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="o">++</span><span class="n">j</span><span class="p">){</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;=</span><span class="n">change</span><span class="p">;</span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="n">j</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">k</span><span class="o">==</span><span class="n">change</span><span class="p">)</span>	<span class="c1">//判断条件，若相等说明此种分配满足，方法数加一</span>
+                    <span class="o">++</span><span class="n">Methods</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Methods=&quot;</span><span class="o">&lt;&lt;</span><span class="n">Methods</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//测试数据：输入50，输出应为106</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lab2.html" class="btn btn-neutral float-left" title="lab2 2021.9.30" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="lab4.html" class="btn btn-neutral float-right" title="lab4 2021.10.14" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

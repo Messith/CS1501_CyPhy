@@ -1,0 +1,99 @@
+# lab3 2021.10.9
+
+> <sub>使用参考书为学校配套使用上机指导书</sub>
+
+#### 一、求a+aa+aaa+…+aaaa..aa(n个a)之和 p13
+
+本题要注意的就是题目没有说明a的输入范围，因此要考虑多位情况。如何得到a的位数可参考示例代码，可以用本次上课学的循环语句计算，也可用已有数学知识直接调用函数计算。
+
+另一点就是计算加和的方法。这个可以用示例代码中每次for循环一遍重新计算加数再加到`sum`中的方法，也可定义一个加数变量`tmp`保存每次的加数值从而减少计算。
+
+本题逻辑较简单想明白就可以了。其他要注意的可能是计算幂次时不能直接用`^`符号，`^`符号在c++中是一个逻辑运算符，需要调用`pow()`函数。
+
+```c++
+#include<iostream>
+using namespace std;
+
+int main(){
+	int a,n,sum,count,temp;
+    
+    cout << "Input a,n: ";
+    cin >> a >> n;
+ 
+    count = 1;				//或者用 n = log10(a) + 1; 可以直接得到位数。(可能需cmath库)
+    temp = a/10;
+    while(temp!=0){			
+        count++;
+        temp /= 10;
+    }  //得到a的位数
+ 
+    // 按照前后项的顺序对算式进行求和
+    sum = 0;
+    for(int i=1; i<=n; i++)
+        for(int j=0; j<i; j++)
+            sum += a*pow(10,count*j);
+    cout << "Sum=" << sum << endl;
+}
+```
+
+#### 二、求阶乘和
+
+看示例代码应该能够明白。没有什么需要注意的点。（可能要注意初始化？）
+
+```c++
+//本代码来自某同学
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int product,sum;		//定义存储变量
+
+    sum=0;					//初始化，也可在定义时做
+    product=1;
+    for (int i=1;i<=10;++i){	//循环十次
+        product*=i;
+        sum+=product;
+    }
+
+    cout<<sum<<endl;
+
+    return 0;
+}
+```
+
+#### 附加一、计算零钱方法数
+
+本题虽然是附加题，但相对于前两道题其实并不困难，写代码前想明白怎么写逻辑就行。这里本质还是枚举法，把所有情况枚举一遍，检查所有零钱加起来的价值是否等于需要的价值即可。
+
+看明白示例代码就行。
+
+```c++
+//本代码同样来自某同学...代码写的挺清楚好看的...
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int change,Methods;			//定义零钱数、方法数
+
+    cout<<"Input the change:";
+    cin>>change;
+
+    Methods=0;					//初始化
+    for (int i=1;i<=change/5;++i){		//要求每种零钱要有一个，因此从1开始循环。
+        for (int j=1;j<=change/2;++j){
+            for (int k=1;k<=change;++k)
+                if (i*5+j*2+k==change)	//判断条件，若相等说明此种分配满足，方法数加一
+                    ++Methods;
+        }
+    }
+
+    cout<<"Methods="<<Methods<<endl;
+
+    return 0;
+}
+
+//测试数据：输入50，输出应为106
+```
+
