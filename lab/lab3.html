@@ -65,7 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lab1.html">lab1 2021.9.23</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab2.html">lab2 2021.9.30</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">lab3 2021.10.9</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a-aa-aaa-aaaa-aa-na-p13">一、求a+aa+aaa+…+aaaa..aa(n个a)之和 p13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-aa-aaa-aaaa-aa-na">一、求a+aa+aaa+…+aaaa..aa(n个a)之和</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">二、求阶乘和</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">附加一、计算零钱方法数</a></li>
 </ul>
@@ -102,8 +102,8 @@
 <blockquote>
 <div><p><sub>使用参考书为学校配套使用上机指导书</sub></p>
 </div></blockquote>
-<div class="section" id="a-aa-aaa-aaaa-aa-na-p13">
-<h2>一、求a+aa+aaa+…+aaaa..aa(n个a)之和 p13<a class="headerlink" href="#a-aa-aaa-aaaa-aa-na-p13" title="永久链接至标题"></a></h2>
+<div class="section" id="a-aa-aaa-aaaa-aa-na">
+<h2>一、求a+aa+aaa+…+aaaa..aa(n个a)之和<a class="headerlink" href="#a-aa-aaa-aaaa-aa-na" title="永久链接至标题"></a></h2>
 <p>本题要注意的就是题目没有说明a的输入范围，因此要考虑多位情况。如何得到a的位数可参考示例代码，可以用本次上课学的循环语句计算，也可用已有数学知识直接调用函数计算。</p>
 <p>另一点就是计算加和的方法。这个可以用示例代码中每次for循环一遍重新计算加数再加到<code class="docutils literal notranslate"><span class="pre">sum</span></code>中的方法，也可定义一个加数变量<code class="docutils literal notranslate"><span class="pre">tmp</span></code>保存每次的加数值从而减少计算。</p>
 <p>本题逻辑较简单想明白就可以了。其他要注意的可能是计算幂次时不能直接用<code class="docutils literal notranslate"><span class="pre">^</span></code>符号，<code class="docutils literal notranslate"><span class="pre">^</span></code>符号在c++中是一个逻辑运算符，需要调用<code class="docutils literal notranslate"><span class="pre">pow()</span></code>函数。</p>
