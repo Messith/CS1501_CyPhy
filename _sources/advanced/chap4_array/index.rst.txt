@@ -9,3 +9,6 @@ Chapter 4 数组
 .. toctree::
    :maxdepth: 1
 
+   searchingAlgorithm
+   sortingAlgorithm
+   segmentationFault

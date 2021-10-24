@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lab5 2021.10.21 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="冰山一角" href="../comic/comic.html" />
+    <link rel="prev" title="lab4 2021.10.14" href="lab4.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab2.html">lab2 2021.9.30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab3.html">lab3 2021.10.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab4.html">lab4 2021.10.14</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">lab5 2021.10.21</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">一、排序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">二、黑色星期五</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">关于作业</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">C++ Comic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../comic/comic.html">冰山一角</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>lab5 2021.10.21</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/lab/lab5.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="lab5-2021-10-21">
+<h1>lab5 2021.10.21<a class="headerlink" href="#lab5-2021-10-21" title="永久链接至标题"></a></h1>
+<blockquote>
+<div><p><sub>使用参考书为学校配套使用上机指导书</sub></p>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>一、排序<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>排序算法需同时完成选择排序和冒泡排序。实现参考课件即可，比较简单。</p>
+<p>有一个问题可能是，定义数组时<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">arr[MAXN];</span></code>数组个数需要用常数定义，不能用变量定义如<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">arr[n]</span></code>。在之后学习中可以知道动态定义的方法。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAXN</span> <span class="o">=</span> <span class="mi">100005</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">lh</span><span class="p">,</span> <span class="n">rh</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Please input n:&quot;</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Please input &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; integers:&quot;</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    
+    <span class="c1">// 选择排序</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">lh</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">lh</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">lh</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">rh</span> <span class="o">=</span> <span class="n">lh</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="n">lh</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">rh</span><span class="p">])</span>
+                <span class="n">rh</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">lh</span><span class="p">];</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">lh</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">rh</span><span class="p">];</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">rh</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="p">}</span> 
+
+    <span class="c1">// 冒泡排序</span>
+    <span class="c1">// bool flag;</span>
+    <span class="c1">// for(int i = 1; i &lt;= n; i++)</span>
+    <span class="c1">// {</span>
+    <span class="c1">//     flag = false;</span>
+    <span class="c1">//     for(int j = 0; j &lt; n - i; j++)</span>
+    <span class="c1">//     {</span>
+    <span class="c1">//         if(arr[j+1] &gt; arr[j])</span>
+    <span class="c1">//         {</span>
+    <span class="c1">//             int tmp = arr[j];</span>
+    <span class="c1">//             arr[j] = arr[j+1];</span>
+    <span class="c1">//             arr[j+1] = tmp;</span>
+    <span class="c1">//             flag = true;</span>
+    <span class="c1">//         }</span>
+    <span class="c1">//     }</span>
+    <span class="c1">//     if(!flag)</span>
+    <span class="c1">//         break;</span>
+    <span class="c1">// }</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Sorted sequence:&quot;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>二、黑色星期五<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>本题想清楚其实也很简单，主要是逻辑问题。验收时遇到的问题有：</p>
+<ol class="simple">
+<li><p>判断闰年条件。判断闰年需要用年份来做，而不是相较1900年的年份。有同学会遗漏两个判断闰年的条件。</p></li>
+<li><p>计数问题，给每星期计数只需用数组即可实现。</p></li>
+</ol>
+<p>在代码中基本没有遇到太多问题，主要是程序逻辑实现上。说明同学们对怎么编写一个C++程序应该比较熟悉了，在之后就学会多用C++中学到的语句实现自己心中的逻辑思想吧！（用人话说就是，用计算机的运行逻辑思考问题。）</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">times</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">1900</span><span class="p">,</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">weekday</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">){</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">400</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;输入年数有误，请重新输入！&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">1</span> <span class="o">||</span> <span class="n">month</span><span class="o">!=</span><span class="mi">12</span><span class="p">){</span>
+        <span class="n">times</span><span class="p">[</span><span class="n">weekday</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">switch</span><span class="p">(</span><span class="n">month</span><span class="p">){</span>  <span class="c1">//根据月份判断下个月的13号的星期数</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>  
+                <span class="k">if</span><span class="p">(</span><span class="n">year</span><span class="o">%</span><span class="mi">4</span><span class="o">!=</span><span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="n">year</span><span class="o">%</span><span class="mi">100</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">year</span><span class="o">%</span><span class="mi">400</span><span class="o">!=</span><span class="mi">0</span><span class="p">))</span>  <span class="n">weekday</span> <span class="o">=</span> <span class="p">(</span><span class="n">weekday</span><span class="o">+</span><span class="mi">28</span><span class="p">)</span><span class="o">%</span><span class="mi">7</span><span class="p">;</span>  <span class="c1">//非闰年</span>
+                <span class="k">else</span>  <span class="n">weekday</span> <span class="o">=</span> <span class="p">(</span><span class="n">weekday</span><span class="o">+</span><span class="mi">29</span><span class="p">)</span><span class="o">%</span><span class="mi">7</span><span class="p">;</span>  <span class="c1">//闰年</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+            <span class="k">case</span> <span class="mi">6</span><span class="o">:</span>
+            <span class="k">case</span> <span class="mi">9</span><span class="o">:</span>
+            <span class="k">case</span> <span class="mi">11</span><span class="o">:</span>  <span class="n">weekday</span> <span class="o">=</span> <span class="p">(</span><span class="n">weekday</span><span class="o">+</span><span class="mi">30</span><span class="p">)</span><span class="o">%</span><span class="mi">7</span><span class="p">;</span>  <span class="k">break</span><span class="p">;</span>  <span class="c1">//天数为30天的月份</span>
+            <span class="k">case</span> <span class="mi">12</span><span class="o">:</span>  <span class="n">month</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span><span class="o">--</span><span class="p">;</span> <span class="n">year</span><span class="o">++</span><span class="p">;</span>  <span class="c1">//跨年</span>
+            <span class="k">default</span><span class="o">:</span>  <span class="n">weekday</span> <span class="o">=</span> <span class="p">(</span><span class="n">weekday</span><span class="o">+</span><span class="mi">31</span><span class="p">)</span><span class="o">%</span><span class="mi">7</span><span class="p">;</span>  <span class="c1">//天数为31天的月份</span>
+        <span class="p">}</span>
+        <span class="n">month</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">times</span><span class="p">[</span><span class="n">weekday</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>  <span class="c1">//最后一个12月13号的星期数需加上</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">7</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>  <span class="c1">//注意顺序是从星期一开始的</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>关于作业<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>本次作业中删除重复数组问题，有同学疑惑<code class="docutils literal notranslate"><span class="pre">while(cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">x)</span></code>怎么使用。</p>
+<p>我们知道，<code class="docutils literal notranslate"><span class="pre">cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">x</span></code>代表获取键盘输入的值赋值给变量x。而在C++中一般函数\表达式都有值，也就是说<code class="docutils literal notranslate"><span class="pre">cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">x</span></code>这个式子也是有值的。这个式子的值取决于输入是否正常。如果输入正常，可以认为<code class="docutils literal notranslate"><span class="pre">cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">x</span></code>的值就是<code class="docutils literal notranslate"><span class="pre">true</span></code>，<code class="docutils literal notranslate"><span class="pre">while(cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">x)</span></code>就会不断的循环读入输入至变量x中。如果输入错误，比如我们读到<code class="docutils literal notranslate"><span class="pre">Ctrl+Z</span></code>，其值就是<code class="docutils literal notranslate"><span class="pre">false</span></code>，此时就会跳出循环。</p>
+<p>因此，在不知道输入数据的数量时，我们可以用这样的方式来不断读取输入。（否则，不知道要读入多少个数据）</p>
+<p>以代码为例，以下程序就统计了一个读入多少次有效输入。至于如何读到数组<code class="docutils literal notranslate"><span class="pre">a[MaxN]</span></code>中，想明白以上读入逻辑即可。（注意题目中变量x只是举例用，没有限制代码中必须出现<code class="docutils literal notranslate"><span class="pre">while(cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">x)</span></code>）</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+	<span class="kt">int</span> <span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//统计次数</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">){</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span> <span class="c1">//while循环结束 </span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">cnt</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lab4.html" class="btn btn-neutral float-left" title="lab4 2021.10.14" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../comic/comic.html" class="btn btn-neutral float-right" title="冰山一角" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

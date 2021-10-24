@@ -1,0 +1,144 @@
+# lab5 2021.10.21
+
+> <sub>使用参考书为学校配套使用上机指导书</sub>
+
+#### 一、排序
+
+排序算法需同时完成选择排序和冒泡排序。实现参考课件即可，比较简单。
+
+有一个问题可能是，定义数组时`int arr[MAXN];`数组个数需要用常数定义，不能用变量定义如`int arr[n]`。在之后学习中可以知道动态定义的方法。
+
+
+```c++
+#include <iostream>
+using namespace std;
+const int MAXN = 100005;
+int main()
+{
+    int n, lh, rh, k;
+    int arr[MAXN];
+    cout << "Please input n:";
+    cin >> n;
+    cout << "Please input " << n << " integers:";
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    
+    // 选择排序
+    for (lh = 0 ; lh < n; lh++)
+    {
+        rh = lh;
+        for(k = lh; k < n; k++)
+        {
+            if(arr[k] > arr[rh])
+                rh = k;
+        }
+        int tmp = arr[lh];
+        arr[lh] = arr[rh];
+        arr[rh] = tmp;
+    } 
+
+    // 冒泡排序
+    // bool flag;
+    // for(int i = 1; i <= n; i++)
+    // {
+    //     flag = false;
+    //     for(int j = 0; j < n - i; j++)
+    //     {
+    //         if(arr[j+1] > arr[j])
+    //         {
+    //             int tmp = arr[j];
+    //             arr[j] = arr[j+1];
+    //             arr[j+1] = tmp;
+    //             flag = true;
+    //         }
+    //     }
+    //     if(!flag)
+    //         break;
+    // }
+
+    cout << "Sorted sequence:";
+    for (int i = 0; i < n; i++)
+        cout<<arr[i]<<" ";
+    return 0;
+}
+
+```
+
+#### 二、黑色星期五
+
+本题想清楚其实也很简单，主要是逻辑问题。验收时遇到的问题有：
+
+1. 判断闰年条件。判断闰年需要用年份来做，而不是相较1900年的年份。有同学会遗漏两个判断闰年的条件。
+2. 计数问题，给每星期计数只需用数组即可实现。
+
+在代码中基本没有遇到太多问题，主要是程序逻辑实现上。说明同学们对怎么编写一个C++程序应该比较熟悉了，在之后就学会多用C++中学到的语句实现自己心中的逻辑思想吧！（用人话说就是，用计算机的运行逻辑思考问题。）
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int times[7] = {0};
+    int year = 1900, month = 1;
+    int weekday = 5;
+    int n;
+
+    while(true){
+        cin >> n;
+        if(n>=1 && n<=400)
+            break;
+        cout << "输入年数有误，请重新输入！" << endl;
+    }
+
+    while(n>1 || month!=12){
+        times[weekday]++;
+        switch(month){  //根据月份判断下个月的13号的星期数
+            case 2:  
+                if(year%4!=0 || (year%100==0 && year%400!=0))  weekday = (weekday+28)%7;  //非闰年
+                else  weekday = (weekday+29)%7;  //闰年
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:  weekday = (weekday+30)%7;  break;  //天数为30天的月份
+            case 12:  month = 0; n--; year++;  //跨年
+            default:  weekday = (weekday+31)%7;  //天数为31天的月份
+        }
+        month++;
+    }
+    times[weekday]++;  //最后一个12月13号的星期数需加上
+
+    for(int i=0; i<7; i++)  cout << times[i] << ' ';  //注意顺序是从星期一开始的
+    cout << endl;
+
+    return 0;
+}
+```
+
+#### 关于作业
+
+本次作业中删除重复数组问题，有同学疑惑`while(cin >> x)`怎么使用。
+
+我们知道，`cin >> x`代表获取键盘输入的值赋值给变量x。而在C++中一般函数\表达式都有值，也就是说`cin >> x`这个式子也是有值的。这个式子的值取决于输入是否正常。如果输入正常，可以认为`cin >> x`的值就是`true`，`while(cin >> x)`就会不断的循环读入输入至变量x中。如果输入错误，比如我们读到`Ctrl+Z`，其值就是`false`，此时就会跳出循环。
+
+因此，在不知道输入数据的数量时，我们可以用这样的方式来不断读取输入。（否则，不知道要读入多少个数据）
+
+以代码为例，以下程序就统计了一个读入多少次有效输入。至于如何读到数组`a[MaxN]`中，想明白以上读入逻辑即可。（注意题目中变量x只是举例用，没有限制代码中必须出现`while(cin >> x)`）
+
+```c++
+#include<iostream>
+using namespace std;
+
+int main(){
+	int a= 0 ;
+	int cnt=0;//统计次数
+	while(cin >> x){
+		cout << x << endl;
+		cnt++;
+	} //while循环结束 
+	cout<<cnt<<endl;
+    return 0;
+}
+```
+

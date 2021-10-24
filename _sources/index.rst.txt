@@ -46,6 +46,13 @@
    lab/lab2
    lab/lab3
    lab/lab4
+   lab/lab5
+
+.. toctree::
+   :maxdepth: 2
+   :caption: C++ Comic
+
+   comic/comic
 
 关于此教程
 ---------

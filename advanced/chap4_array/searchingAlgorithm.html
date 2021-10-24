@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>查找算法 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="排序算法" href="sortingAlgorithm.html" />
+    <link rel="prev" title="Chapter 4 数组" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 4 数组</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">查找算法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linear-search">一、顺序查找（Linear Search）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">二、二分查找</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">算法性能</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sortingAlgorithm.html">排序算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="segmentationFault.html">段错误（Segmentation Fault）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap5_function/index.html">Chapter 5 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab2.html">lab2 2021.9.30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab3.html">lab3 2021.10.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab4.html">lab4 2021.10.14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab5.html">lab5 2021.10.21</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">C++ Comic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../comic/comic.html">冰山一角</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Chapter 4 数组</a> &raquo;</li>
+      <li>查找算法</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/advanced/chap4_array/searchingAlgorithm.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>查找算法<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<div class="section" id="linear-search">
+<h2>一、顺序查找（Linear Search）<a class="headerlink" href="#linear-search" title="永久链接至标题"></a></h2>
+<p>顺序查找，利用朴素的想法，简单的从数组头开始搜索希望找到的元素。算法逻辑可以概括为：</p>
+<p><strong>从数组的第一个元素开始，依次往下比较，直到找到要找的元素为止。</strong></p>
+<p>用一个简单的程序举例</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="kt">int</span>  <span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;请输入要查找的元素值：&quot;</span><span class="p">;</span> 
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">array</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="p">{</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">k</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> 
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;not found&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>二、二分查找<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>二分查找要求数组元素按照某一顺序排序，如数字的大小顺序、字母的字母序等。一般在查字典的时候，就会使用类似二分查找的思想。二分查找的基本步骤有三步：</p>
+<ol class="simple">
+<li><p>确定上下界：lh, rh</p></li>
+<li><p>找出中间元素的位置：mid = ( lh + rh ) / 2</p></li>
+<li><p>比较中间元素与欲查找的元素 key，根据不同情况进入不同分支继续处理</p>
+<ul class="simple">
+<li><p>如key 等于中间元素，则mid就是要查找的元素的位置</p></li>
+<li><p>如key &gt;中间元素，则从lh–mid的这些元素不可能是要查找的元素，修正查找范围为lh= mid + 1到rh</p></li>
+<li><p>如key &lt;中间元素，则从mid - rh的这些元素不可能是要查找的元素，修正查找范围为lh到rh = mid - 1</p></li>
+<li><p>如lh &gt; rh，则要查找的元素不存在</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">lh</span><span class="p">,</span> <span class="n">rh</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">x</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">array</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span> 
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;请输入要查找的数据：&quot;</span><span class="p">;</span> 
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span> 
+    <span class="n">lh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">rh</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span> 
+    <span class="k">while</span> <span class="p">(</span> <span class="n">lh</span> <span class="o">&lt;=</span> <span class="n">rh</span> <span class="p">)</span> <span class="p">{</span> 
+    	<span class="n">mid</span> <span class="o">=</span> <span class="p">(</span> <span class="n">lh</span> <span class="o">+</span> <span class="n">rh</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> 
+    	<span class="k">if</span> <span class="p">(</span> <span class="n">x</span><span class="o">==</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span> 
+    		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;的位置是：&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">mid</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+    		<span class="k">break</span><span class="p">;</span> 
+        <span class="p">}</span> 
+        <span class="k">if</span> <span class="p">(</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> 
+        <span class="k">else</span> <span class="n">lh</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="p">}</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="n">lh</span> <span class="o">&gt;</span> <span class="n">rh</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;没有找到&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>算法性能<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>显然二分查找的效率比顺序查找要高，二分查找在最坏情况下查找次数为log<sub>2</sub>N+1次，而顺序查找最坏情况查找次数则为N次。但二分查找只能对已排序数组操作，这是其局限性。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Chapter 4 数组" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="sortingAlgorithm.html" class="btn btn-neutral float-right" title="排序算法" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
