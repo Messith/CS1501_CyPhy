@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>变量的时空限制 &mdash; CS1501-CyPhy v1.0 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Chapter 6 指针" href="../chap6_pointer/index.html" />
+    <link rel="prev" title="Chapter 5 函数" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CS1501-CyPhy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">工具相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/CppEnvConfig.html">C++运行环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tool/EduCoderUse.html">EduCoder作业平台使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">扩展知识</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chap0_intro/index.html">Chapter 0 绪论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap1_order/index.html">Chapter 1 顺序结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap2_branch/index.html">Chapter 2 分支结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap3_loop/index.html">Chapter 3 循环结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap4_array/index.html">Chapter 4 数组</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 5 函数</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">变量的时空限制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">变量作用域(空间限制)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">局部变量和全局变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">规则</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">全局变量使用须知</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">变量生存时限（时间限制）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">静态变量使用须知</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-memory-layout">C++内存布局(Memory Layout)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">存储类别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">内存布局</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chap6_pointer/index.html">Chapter 6 指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap7_structure/index.html">Chapter 7 结构体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap8_modular/index.html">Chapter 8 模块化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap9_class/index.html">Chapter 9 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap10_overload/index.html">Chapter 10 重载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap11_inheritance/index.html">Chapter 11 继承</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">上机实验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab1.html">lab1 2021.9.23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab2.html">lab2 2021.9.30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab3.html">lab3 2021.10.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab4.html">lab4 2021.10.14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lab/lab5.html">lab5 2021.10.21</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">C++ Comic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../comic/comic.html">冰山一角</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS1501-CyPhy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Chapter 5 函数</a> &raquo;</li>
+      <li>变量的时空限制</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/advanced/chap5_function/scopeTime.md" class="fa fa-github"> 在 GitHub 上修改</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>变量的时空限制<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<div class="section" id="id2">
+<h2>变量作用域(空间限制)<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>变量作用域描述了此变量名在文件（翻译单元）的多大范围可见。变量的作用域与程序块（block）有关。</p>
+<p>例如，在函数中定义的变量可以在该函数中使用，但不能在其他函数中使用；而在文件中的函数定义之前定义的变量则可在所有函数中使用。</p>
+<hr class="docutils" />
+<div class="section" id="id3">
+<h3>局部变量和全局变量<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<p>我们可简单将定义的变量分为两类： <strong>局部变量和全局变量</strong> 。</p>
+<ul class="simple">
+<li><p>局部变量（Local Variable）</p>
+<ul>
+<li><p>在程序块内（函数、复合语句）中定义的变量</p></li>
+<li><p>main()函数中定义的变量也是局部变量（main函数也是一个函数，只不过对于运行环境来说特殊一些）</p></li>
+</ul>
+</li>
+<li><p>全局变量（Global Variable )</p>
+<ul>
+<li><p>在所有函数之外定义的变量</p></li>
+<li><p>作用范围：从定义位置到文件结束</p></li>
+<li><p>作用：方便函数间的数据传递</p></li>
+<li><p>如在作用范围外的函数要使用此变量，用关键词extern在函数内说明此全局变量。（比如要在另一个文件中引用此变量）</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>//file 作用域示例.c
+
+void Function();
+int x = 1; int y = 2;					//全局变量
+extern int z = 3;						//可被外部文件链接的全局变量
+
+int main()
+{   int i=0;							//作用域为main()的局部变量
+    cout &lt;&lt;x &lt;&lt; “, ”&lt;&lt;y&lt;&lt;endl;
+    Function();
+    return 0;
+}
+
+void  Function()
+ {   int a = 0; 						//作用域为Function()的局部变量
+     cout &lt;&lt;x &lt;&lt; “, ”&lt;&lt;y&lt;&lt;endl;
+ }
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h3>规则<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<p>变量作用域遵循以下几个规则：</p>
+<ul>
+<li><p>在程序块（block）中说明的变量是局部的，仅能在本块中和内部的块中存取。</p>
+<p>如下程序中的<code class="docutils literal notranslate"><span class="pre">i</span></code>作用域只在<code class="docutils literal notranslate"><span class="pre">for</span></code>循环内（<code class="docutils literal notranslate"><span class="pre">for</span></code>是一个程序块而非函数），当跳出<code class="docutils literal notranslate"><span class="pre">for</span></code>循环后，<code class="docutils literal notranslate"><span class="pre">i</span></code>变量就无法被外部的<code class="docutils literal notranslate"><span class="pre">main()</span></code>读取到。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>   <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>									<span class="c1">//		sum，m作用域</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>			<span class="c1">// 	  i作用域					|</span>
+     <span class="p">{</span>									<span class="c1">//		|					  |</span>
+         <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="s">&quot;input a nmuber:&quot;</span><span class="p">;</span>		<span class="c1">//		|					  |</span>
+         <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span>						<span class="c1">//		|					  |</span>
+         <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">m</span><span class="p">;</span>					<span class="c1">//    	|				      |</span>
+     <span class="p">}</span>									<span class="c1">//	  i作用域					|</span>
+     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;sum = &quot;</span><span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>					<span class="c1">//			  |</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>											<span class="c1">//		sum, m作用域</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>当内部块与外部块有同名变量时，在内部块中屏蔽外部块的同名变量。（简单来说，就近原则，看最近的定义）</p>
+<ul class="simple">
+<li><p>当局部变量与全局变量同名时，会按照就近原则选取变量，如<code class="docutils literal notranslate"><span class="pre">main()</span></code>函数中没有定义<code class="docutils literal notranslate"><span class="pre">x,y</span></code>变量，则选取全局定义的<code class="docutils literal notranslate"><span class="pre">x,y</span></code>变量值。而<code class="docutils literal notranslate"><span class="pre">Function()</span></code>函数中重新定义了局部变量<code class="docutils literal notranslate"><span class="pre">x,y</span></code>，因此在<code class="docutils literal notranslate"><span class="pre">Function()</span></code>函数中就直接用定义局部变量的值。可见下程序运行结果。</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">Function</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;x=&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;  y=&quot;</span> <span class="o">&lt;&lt;</span><span class="n">y</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">Function</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>  <span class="nf">Function</span><span class="p">()</span>
+<span class="p">{</span>   <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span>
+     <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;x=&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;  y=&quot;</span> <span class="o">&lt;&lt;</span><span class="n">y</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//output </span>
+<span class="c1">//x=1 y=2</span>
+<span class="c1">//x=2 y=1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>如果目前的程序块中有局部变量与程序的全局变量重名，那么如何调用全局变量？使用作用域限定符<code class="docutils literal notranslate"><span class="pre">::</span></code></p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// C++ program to show that we can access a global</span>
+<span class="c1">// variable using scope resolution operator :: when</span>
+<span class="c1">// there is a local variable with same name</span>
+<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// Global x</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Local x</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Value of global x is &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">::</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Value of local x is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>当实际参数与形式参数同名时，可见下程序运行结果。<strong>形参值改变不影响与其同名的实参值</strong></p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">Function</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span>  <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>   
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;x=&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;  y=&quot;</span> <span class="o">&lt;&lt;</span><span class="n">y</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">Function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Function</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span>  <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span>
+     <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;x=&quot;</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="s">&quot;  y=&quot;</span> <span class="o">&lt;&lt;</span><span class="n">y</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+ <span class="p">}</span>
+
+<span class="c1">//output </span>
+<span class="c1">//x=1 y=2</span>
+<span class="c1">//x=2 y=1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>注意形式参数不可以和局部变量同名。也就是在函数内不能定义与形式变量同名的变量。</p></li>
+</ul>
+</li>
+<li><p>在一个函数中，我们不能存取主调函数（caller）的变量，即使知道该变量的名字。</p>
+<p>比如函数A调用了函数B，那在函数B中也无法调用函数A中定义的变量（即使知道该变量的名字）。</p>
+</li>
+</ul>
+<p>以上总结一下：</p>
+<ul class="simple">
+<li><p>在程序块（block）中说明的变量是局部的，仅能在本块中和内部的块中存取。</p></li>
+<li><p>当内部块与外部块有同名变量时，在内部块中屏蔽外部块的同名变量。</p></li>
+<li><p>在一个函数中，我们不能存取主调函数（caller）的变量，即使知道该变量的名字。</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id5">
+<h3>全局变量使用须知<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>一般使用的情况</p>
+<ul>
+<li><p>当多个函数必须共享同一个变量时</p></li>
+<li><p>当少数几个函数必须共享大量数据时；</p></li>
+</ul>
+</li>
+<li><p>全局变量破坏了模块化，建议尽量少使用！</p></li>
+<li><p>当全局变量和局部变量同名时，在局部变量的作用范围中全局变量被屏蔽。如果要使用全局变量，可以使用作用域运算符<code class="docutils literal notranslate"><span class="pre">::</span></code>。</p></li>
+<li><p>全局变量的使用将在模块化设计中详细介绍。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>变量生存时限（时间限制）<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p>变量的生存时限主要涉及到<code class="docutils literal notranslate"><span class="pre">static</span></code>关键字的使用。也就是静态(<code class="docutils literal notranslate"><span class="pre">static</span></code>)变量</p>
+<p>我们知道一般在调用函数时，被调用函数内部的变量都是重新初始化的，这保证了每一次调用函数都能得到相同的结果，使函数变得通用（这也是我们定义函数的意义）。这样被调用函数中的变量生存时间就很短，在每次被调用时初始化，调用结束时被回收。</p>
+<p>如下程序中的<code class="docutils literal notranslate"><span class="pre">count</span></code>变量，在<code class="docutils literal notranslate"><span class="pre">main()</span></code>函数每次调用<code class="docutils literal notranslate"><span class="pre">demo()</span></code>时重新定义初始化，并在调用结束后被回收。这样的过程总共持续了5次。因此我们可以认为在程序执行过程中出现了五个<code class="docutils literal notranslate"><span class="pre">count</span></code>变量（或许称为<code class="docutils literal notranslate"><span class="pre">count1</span></code> <code class="docutils literal notranslate"><span class="pre">count2</span></code> <code class="docutils literal notranslate"><span class="pre">count3</span></code> <code class="docutils literal notranslate"><span class="pre">count4</span></code> <code class="docutils literal notranslate"><span class="pre">count5</span></code>）。它们的行为都是相同的。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">demo</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+	<span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+		<span class="n">demo</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//output</span>
+<span class="c1">//0 0 0 0 0</span>
+</pre></div>
+</div>
+<p>但有时我们需要函数中的变量在整个运行程序中都持续存在，比如要记录调用了<code class="docutils literal notranslate"><span class="pre">demo()</span></code>函数的次数，此时我们就要延长<code class="docutils literal notranslate"><span class="pre">count</span></code>变量的生存时间，不让其在<code class="docutils literal notranslate"><span class="pre">demo()</span></code>被调用完后就被回收。</p>
+<p><code class="docutils literal notranslate"><span class="pre">static</span></code>关键字就起到这个作用，在修饰变量的时候，static修饰的静态局部变量只执行初始化一次，而且延长了局部变量的生命周期，直到程序运行结束以后才释放，且不改变作用域。如下程序</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// C++ program to demonstrate</span>
+<span class="c1">// the use of static Static</span>
+<span class="c1">// variables in a Function</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">demo</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="c1">// static variable</span>
+	<span class="k">static</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+	<span class="c1">// value is updated and</span>
+	<span class="c1">// will be carried to next</span>
+	<span class="c1">// function calls</span>
+	<span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+		<span class="n">demo</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//output</span>
+<span class="c1">//0 1 2 3 4</span>
+</pre></div>
+</div>
+<div class="section" id="id7">
+<h3>静态变量使用须知<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p>未被程序员初始化的静态变量都由系统初始化为0</p></li>
+<li><p>局部静态变量的初值是编译时赋的。当运行时重复调用此函数时，不重复赋初值。</p></li>
+<li><p>虽然局部静态变量在函数调用结束后仍然存在，但其他函数不能引用它</p></li>
+<li><p>局部的静态变量在程序执行结束时消亡</p></li>
+<li><p>用<code class="docutils literal notranslate"><span class="pre">static</span></code>还可以用在函数定义或说明中。该函数只能被用于本源文件中，其他源文件不能调用此函数（达到了隐藏的作用）</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="c-memory-layout">
+<h2>C++内存布局(Memory Layout)<a class="headerlink" href="#c-memory-layout" title="永久链接至标题"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">static</span></code>变量只是C++存储类别中的一种，因为存储类别的不同，定义的变量将会有不同的特性，如<code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">variable</span></code>的主要特性就在前介绍了。</p>
+<div class="section" id="id8">
+<h3>存储类别<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>在C++语言中 ，每个变量有两个属性：</p>
+<ul>
+<li><p>数据类型：变量所存储的数据类型</p></li>
+<li><p>存储类别：变量的存储位置和期限</p></li>
+</ul>
+</li>
+<li><p>标准的变量定义： <code class="docutils literal notranslate"><span class="pre">存储类别</span>&#160;&#160;&#160; <span class="pre">数据类型</span>&#160;&#160;&#160; <span class="pre">变量名</span></code>      如   <code class="docutils literal notranslate"><span class="pre">static</span>&#160; <span class="pre">int</span>&#160; <span class="pre">count</span></code></p></li>
+<li><p>存储类别主要有四类</p>
+<ul>
+<li><p>自动变量    <code class="docutils literal notranslate"><span class="pre">auto</span></code></p></li>
+<li><p>静态变量    <code class="docutils literal notranslate"><span class="pre">static</span></code></p></li>
+<li><p>寄存器变量    <code class="docutils literal notranslate"><span class="pre">register</span></code></p></li>
+<li><p>外部变量    <code class="docutils literal notranslate"><span class="pre">extern</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id9">
+<h3>内存布局<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+<p>之所以称为存储类别，是因为在一个C++语言生成的可执行文件在内存中有不同的存储位置。</p>
+<img src=".\memLayout.png" style="zoom:100%;" /><p>典型的可执行文件可分为两部分</p>
+<ul class="simple">
+<li><p>代码段（<code class="docutils literal notranslate"><span class="pre">.text</span></code>），由编译后的机器指令组成，为只读</p></li>
+<li><p>数据段：</p>
+<ul>
+<li><p>初始化的数据段（initialized data segment）：也称<code class="docutils literal notranslate"><span class="pre">.data</span> </code>段，需要与内存进行数据交互</p></li>
+<li><p>未初始化的数据段（uninitialized data segment）:也称<code class="docutils literal notranslate"><span class="pre">.bss</span></code>（ block stated by symbol ）段，此段的变量只有名称和大小，没有值（故无需内存数据交互）</p></li>
+<li><p>栈（.<code class="docutils literal notranslate"><span class="pre">stack</span></code>）：存储动态数据</p></li>
+<li><p>堆（<code class="docutils literal notranslate"><span class="pre">.heap</span></code>）：动态内存布局（由C++中的new）</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>下面介绍各个不同存储类别的变量在内存不居中的位置及其特性</p>
+<ul>
+<li><p>自动变量  <code class="docutils literal notranslate"><span class="pre">auto</span></code></p>
+<p>在函数内或块内定义的变量缺省时是<code class="docutils literal notranslate"><span class="pre">auto</span></code>。如<code class="docutils literal notranslate"><span class="pre">auto</span>&#160; <span class="pre">int</span> <span class="pre">i</span></code>等价于 <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span></code>; 也就是说我们平时定义的变量都是自动变量，其有以下特性</p>
+<ul class="simple">
+<li><p>当函数被调用时，系统为自动变量分配空间（栈中以桢的形式保存）</p></li>
+<li><p>当退出时，系统释放分配给自动变量的值</p></li>
+<li><p>当再次进入该块时，系统重新分配空间</p></li>
+</ul>
+<p>简单来说，就是<code class="docutils literal notranslate"><span class="pre">auto</span></code>变量存储在栈(<code class="docutils literal notranslate"><span class="pre">.stack</span></code>)中，每次被调用时被分配到栈中，调用结束就出栈。</p>
+<p>*注意C++11后<code class="docutils literal notranslate"><span class="pre">auto</span></code>关键字被用于自动推断变量类型，自动变量无需再用<code class="docutils literal notranslate"><span class="pre">auto</span></code>*说明</p>
+</li>
+<li><p>静态变量  <code class="docutils literal notranslate"><span class="pre">static</span></code></p>
+<p>静态变量就是在整个程序运行期间都存在的变量，当程序开始运行时就加载到内存中，程序完全退出时一起释放内存。</p>
+<ul class="simple">
+<li><p>存储位置：<code class="docutils literal notranslate"><span class="pre">.bss</span></code>或<code class="docutils literal notranslate"><span class="pre">.data</span></code>区别在于其是否初始化。</p></li>
+<li><p>静态的局部变量：离开函数后，值仍保留</p></li>
+<li><p>静态的全局变量：作用域为整个文件，就算有extern也无法跨文件访问，会触发linkage error（也就是作用域为此文件，其他文件无法引用）</p></li>
+</ul>
+</li>
+<li><p>寄存变量  <code class="docutils literal notranslate"><span class="pre">register</span></code></p>
+<p>代替自动变量或形参，可以提高变量的访问速度（因为处理器访问寄存器的速度是最快的）。</p>
+<ul class="simple">
+<li><p>存储位置：寄存器</p></li>
+<li><p>如无合适的寄存器可用，则编译器把它设为自动变量。</p></li>
+<li><p>只有局部自动变量才能定义为寄存器变量，全局变量和静态局部变量不能定义。</p></li>
+</ul>
+</li>
+<li><p>外部变量  <code class="docutils literal notranslate"><span class="pre">extern</span></code></p>
+<p>声明一个不在本模块作用范围内的全局变量。主要用于多文件编译程序，目前大家都只用一个文件运行可能不需要考虑这个类型的变量，但在较大工程中的代码规范必然会用到<code class="docutils literal notranslate"><span class="pre">extern</span></code>变量。</p>
+<ul class="simple">
+<li><p>在某函数中引用了一个声明在本函数后的全局变量时，需要在函数内用extern声明此全局变量</p></li>
+<li><p>当一个程序有多个源文件组成时，用extern可引用另一文件中的全局变量。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Chapter 5 函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../chap6_pointer/index.html" class="btn btn-neutral float-right" title="Chapter 6 指针" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 CyPhy 采用知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆 许可协议发布.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
